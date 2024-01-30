@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .header{
+            box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+            height: 55px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 20px;
+            margin-top: 15px;
+            align-items: center;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+        ul{
+            display: flex;
+            gap: 40px;
+        }
+        li{
+            list-style: none;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        .header__logo{
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header__right-part{
+            display: flex;
+            gap: 15px;
+
+        }
+
+        button{
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .search{
+            transition: 0.3s ease-in;
+            border-radius: 50%;
+        }
+        .search:hover{
+            background-color: #5DADE2 ;
+
+
+        }
+        .info{
+            background-color: #CCCCFF;
+            border-radius: 19px;
+
+        }
+        .info:hover{
+            background-color: whitesmoke;
+            transition: 0.3s;
+        }
+        .login{
+            background-color: #9FE2BF;
+            border-radius: 19px;
+            transition: 0.3s;
+        }
+        .login:hover{
+            background-color: whitesmoke;
+
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </STYLE>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="header__logo">
+            <h1>Udacity</h1>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#">My Programs</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Catalog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header__right-part">
+            <div class="search">
+                <button>
+                    <img src="/find.png" alt="">
+                </button>
+            </div>
+            <div class="info">
+                <button>
+                    <img src="/free-icon-info-1445402.png" alt="">
+                </button>
+            </div>
+            <div class="login">
+                <button>
+                    <img src="/login-avatar.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
