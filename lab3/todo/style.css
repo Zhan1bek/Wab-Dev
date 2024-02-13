@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.todo-container {
+    width: 300px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.task-done {
+    text-decoration: line-through;
+}
