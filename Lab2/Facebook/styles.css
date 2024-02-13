@@ -14,7 +14,7 @@ body{
 
 .title-box{
     width: 500px;
-
+    order: 2;
 }
 
 .title-box h1{
@@ -37,6 +37,7 @@ body{
     background: white;
     margin-left: 60px;
     box-shadow: 0px 2px 10px 1px rgba(71,71,71,0.52);
+    order: 1;
 }
 
 .form-box input{
@@ -48,6 +49,12 @@ body{
     border: 1px solid #eeebeb;
     border-radius: 5px;
     outline: none;
+
+}
+
+.form-box form{
+    display: flex;
+    flex-direction: row;
 }
 
 .form-box input:focus{

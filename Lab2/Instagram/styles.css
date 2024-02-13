@@ -59,6 +59,11 @@ main {
     color: white;
 }
 
+.form-div .input{
+    display: flex;
+    flex-direction: row;
+}
+
 #or {
     margin: 20px 0;
 }
