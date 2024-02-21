@@ -1,38 +1,64 @@
+document.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
+});
+
 function addTask() {
     const taskInput = document.getElementById('taskInput');
-    if (taskInput.value.trim() === '') return; // Ignore empty tasks
+    if (taskInput.value.trim() === '') return;
 
-    const todoList = document.getElementById('todoList');
+    const newTask = createTaskElement(taskInput.value, false);
+    document.getElementById('todoList').appendChild(newTask);
+    saveTasks();
+    taskInput.value = '';
+}
+
+function createTaskElement(text, completed) {
     const li = document.createElement('li');
-
-    // Checkbox to mark the task as done
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.onclick = function() {
-        if (this.checked) {
+    checkbox.checked = completed;
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
             li.classList.add('task-done');
         } else {
             li.classList.remove('task-done');
         }
-    };
+        saveTasks();
+    });
 
-    // Span to hold the task text
     const taskText = document.createElement('span');
-    taskText.textContent = taskInput.value;
+    taskText.textContent = text;
 
-    // Delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    deleteBtn.onclick = function() {
-        todoList.removeChild(li);
-    };
+    deleteBtn.addEventListener('click', function() {
+        li.remove();
+        saveTasks();
+    });
 
-    // Assemble the list item
     li.appendChild(checkbox);
     li.appendChild(taskText);
     li.appendChild(deleteBtn);
-    todoList.appendChild(li);
+    if(completed) li.classList.add('task-done');
 
-    // Clear input
-    taskInput.value = '';
+    return li;
+}
+
+function saveTasks() {
+    const tasks = [];
+    document.querySelectorAll('#todoList li').forEach(li => {
+        tasks.push({
+            text: li.innerText.replace('Delete', '').trim(),
+            completed: li.firstChild.checked
+        });
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(task => {
+        const newTask = createTaskElement(task.text, task.completed);
+        document.getElementById('todoList').appendChild(newTask);
+    });
 }

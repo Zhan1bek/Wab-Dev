@@ -1,0 +1,9 @@
+<div *ngFor="let product of products" class="product">
+  <img src="{{ product.image }}" alt="{{ product.name }}">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>Рейтинг: {{ product.rating }}</p>
+  <p>Цена: {{ product.price | currency:'USD' }}</p>
+  <button (click)="share(product)">Поделиться</button>
+</div>
+

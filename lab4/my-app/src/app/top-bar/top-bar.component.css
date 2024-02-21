@@ -1,0 +1,17 @@
+.top-bar {
+  background-color: #343a40;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}

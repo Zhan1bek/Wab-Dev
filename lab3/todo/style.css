@@ -21,3 +21,6 @@ li {
 .task-done {
     text-decoration: line-through;
 }
+button {
+    margin-left:10px ;
+}
