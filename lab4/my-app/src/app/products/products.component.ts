@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service'; // Ensure correct path
-import { Product } from '../models/product.model'; // Ensure correct path
+import { Product } from '../models/product.model';
+import {CurrencyPipe} from "@angular/common"; // Ensure correct path
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   standalone: true,
+  imports: [
+    CurrencyPipe
+  ],
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
