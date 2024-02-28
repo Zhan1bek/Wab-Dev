@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
-  model:string | undefined;
-  name:string | undefined;
-  bag:string | undefined;
-  constructor(){}
-  ngOnInit() {
-    this.model = 'My Shop';
-    this.name = 'Checkout';
-    this.bag = 'My bag'
-  }
+
 }
