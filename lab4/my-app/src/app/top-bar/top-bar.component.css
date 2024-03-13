@@ -1,17 +1,17 @@
-.top-bar {
-  background-color: #343a40;
-  padding: 10px 15px;
+.example-spacer{
+  flex: 1 1 auto;
+}
+
+.toolbar{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
 
-.top-bar a {
-  color: white;
-  text-decoration: none;
-  margin-left: 10px;
-}
+  &.button{
+    margin-left: 5px;
+  }
 
-.top-bar a:hover {
-  text-decoration: underline;
+}
+.no-select{
+  cursor: pointer;
+  user-select: none;
 }
