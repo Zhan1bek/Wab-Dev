@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="title">
+    <h3>{{title}}</h3>
+  </div>
+  <ul>
+    <li *ngFor="let product of products">
+      <img [src]="product.image" class="img">
+      <div class="wrapper">
+        <a [title]="product.name + ' more details'" [href]="product.link">
+          {{product.name}} - {{product.price}}
+        </a>
+      </div>
+      <p *ngIf="product.description"><span class="desc">Description:</span> {{product.description}}</p>
+      <div class="all__info">
+        <div class="info">
+          <span class="rating">{{product.rating}}</span> <img [src]="product.ratingImg" class="rate">
+        </div>
+        <button (click)="Share(product.link)">Share</button>
+      </div>
+    </li>
+  </ul>
+</div>
